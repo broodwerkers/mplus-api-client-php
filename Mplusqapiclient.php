@@ -3912,7 +3912,7 @@ public function getBranchGroups($attempts = 0)
     }
 
     //----------------------------------------------------------------------------
-    public function getOverview($cardType, $categoryId = 0, $selectFields, $pageNumber = null, $maxPerPage = null, $orderField = null, $sortOrder = null, $filters = null, $search = null, $retrieveImageList = null, $attempts = 0) {
+    public function getOverview($cardType, $categoryId, $selectFields, $pageNumber = null, $maxPerPage = null, $orderField = null, $sortOrder = null, $filters = null, $search = null, $retrieveImageList = null, $attempts = 0) {
         try {
             $this->validateCardType($cardType);
             $request = $this->parser->convertGetOverviewRequest($cardType, $categoryId, $selectFields, $pageNumber, $maxPerPage, $orderField, $sortOrder, $filters, $search, $retrieveImageList);
@@ -3961,7 +3961,7 @@ public function getBranchGroups($attempts = 0)
 // END getOverviewFields()
 
     //----------------------------------------------------------------------------
-    public function updateBatch($cardType, $categoryId = 0, $numbers, $fields, $attempts = 0) {
+    public function updateBatch($cardType, $categoryId, $numbers, $fields, $attempts = 0) {
         try {
             $this->validateCardType($cardType);
             $request = $this->parser->convertUpdateBatchRequest($cardType, $categoryId, $numbers, $fields);
